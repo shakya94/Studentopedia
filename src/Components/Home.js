@@ -1,20 +1,30 @@
-import React from 'react';
-import { Carousel, Card, Button, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import slide1 from './images/slide1.jpg';
-import slide2 from './images/slide2.jpg';
+import React from "react";
+import { Carousel, Card, Button, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import slide1 from "./images/slide1.jpg";
+import slide2 from "./images/slide2.jpg";
+import slide3 from "./images/slide3.jpg";
+import slide4 from "./images/slide4.jpg";
+import slide5 from "./images/slide5.jpg";
 
 function Home() {
   return (
     <div className="container text-center">
       {/* Hero Section */}
       <h1>Welcome to Studentopedia</h1>
-      <p>Discover a world of knowledge. Let's grow and learn together.</p>
 
       {/* Image Slider (Carousel) */}
       <Carousel className="my-4">
         <Carousel.Item>
-          <img className="d-block w-100" src={slide1} alt="First slide" />
+          <img
+            className="d-block w-100"
+            src={slide1}
+            alt="First slide"
+            style={{
+              height: "750px",
+              objectFit: "cover",
+            }}
+          />
           <Carousel.Caption>
             <h3>Discover</h3>
             <p>Explore new concepts and ideas.</p>
@@ -22,10 +32,66 @@ function Home() {
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={slide2} alt="Second slide" />
+          <img
+            className="d-block w-100"
+            src={slide2}
+            alt="Second slide"
+            style={{
+              height: "750px",
+              objectFit: "cover",
+            }}
+          />
           <Carousel.Caption>
             <h3>Learn</h3>
             <p>Deep dive into courses and lectures.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src={slide3}
+            alt="Third slide"
+            style={{
+              height: "750px",
+              objectFit: "cover",
+            }}
+          />
+          <Carousel.Caption>
+            <h3>Engage</h3>
+            <p>Participate in discussions and group activities.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src={slide4}
+            alt="Fourth slide"
+            style={{
+              height: "750px",
+              objectFit: "cover",
+            }}
+          />
+          <Carousel.Caption>
+            <h3>Collaborate</h3>
+            <p>Work on projects with peers worldwide.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src={slide5}
+            alt="Fifth slide"
+            style={{
+              height: "750px",
+              objectFit: "cover",
+            }}
+          />
+          <Carousel.Caption>
+            <h3>Achieve</h3>
+            <p>Reach new milestones in your learning journey.</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
@@ -118,7 +184,6 @@ function Home() {
           </Card>
         </Col>
       </Row>
-
     </div>
   );
 }
