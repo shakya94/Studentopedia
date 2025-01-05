@@ -12,18 +12,18 @@ function Footer() {
     >
       <Container>
         <Row className="gy-4">
-          {/* Section 1: Organization Info */}
+          
           <Col md={4}>
             <h5 className="text-uppercase">Studentopedia</h5>
             <p style={{ fontSize: "0.95rem", lineHeight: "1.8" }}>
-             Studentopedia is a student-centered media organization
-              with a vision to facilitate students with fast updates, academic
+              Studentopedia is a student-centered media organization with a
+              vision to facilitate students with fast updates, academic
               assistance, personal guidance, and a platform to interact with
               ease.
             </p>
           </Col>
 
-          {/* Section 2: Menu Links */}
+         
           <Col md={4}>
             <h5 className="text-uppercase">Menu</h5>
             <ul style={{ listStyleType: "none", padding: 0, lineHeight: "2" }}>
@@ -75,7 +75,7 @@ function Footer() {
             </ul>
           </Col>
 
-          {/* Section 3: Subscribe */}
+         
           <Col md={4}>
             <h5 className="text-uppercase">Subscribe</h5>
             <p style={{ fontSize: "0.9rem", marginBottom: "10px" }}>
@@ -100,7 +100,7 @@ function Footer() {
           </Col>
         </Row>
 
-        {/* Footer Bottom */}
+       
         <hr style={{ borderColor: "rgba(255, 255, 255, 0.2)" }} />
         <p className="text-center mb-0" style={{ fontSize: "0.85rem" }}>
           &copy; {new Date().getFullYear()} HOIK. All Rights Reserved. <br />
