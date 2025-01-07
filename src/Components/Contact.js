@@ -48,7 +48,6 @@ function Contact() {
         <Row className="justify-content-center">
           <Col md={8}>
             <Form onSubmit={Submit}>
-             
               <Form.Group controlId="name" className="mb-4">
                 <Form.Label>Name</Form.Label>
                 <Form.Control
@@ -67,7 +66,6 @@ function Contact() {
                 />
               </Form.Group>
 
-              
               <Form.Group controlId="email" className="mb-4">
                 <Form.Label>Email Address</Form.Label>
                 <Form.Control
@@ -86,7 +84,6 @@ function Contact() {
                 />
               </Form.Group>
 
-             
               <Form.Group controlId="message" className="mb-4">
                 <Form.Label>Message</Form.Label>
                 <Form.Control
@@ -106,7 +103,6 @@ function Contact() {
                 />
               </Form.Group>
 
-             
               <Button
                 type="submit"
                 className="w-100"

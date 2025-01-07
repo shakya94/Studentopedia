@@ -1,6 +1,6 @@
 import React from "react";
-import { Carousel as BootstrapCarousel } from "react-bootstrap"; 
-import MultiCarousel from "react-multi-carousel"; 
+import { Carousel as BootstrapCarousel } from "react-bootstrap";
+import MultiCarousel from "react-multi-carousel";
 import { Link } from "react-router-dom";
 import slide1 from "./images/slide1.jpg";
 import slide2 from "./images/slide2.jpg";
@@ -51,10 +51,8 @@ function Home() {
 
   return (
     <div className="container text-center">
-    
       <h1>Welcome to Studentopedia</h1>
 
-      
       <BootstrapCarousel className="my-4">
         {[slide1, slide2, slide3, slide4, slide5].map((image, index) => (
           <BootstrapCarousel.Item key={index}>
@@ -91,7 +89,6 @@ function Home() {
         ))}
       </BootstrapCarousel>
 
-     
       <MultiCarousel responsive={responsive} className="mt-5">
         {cards.map((card, index) => (
           <div key={index} style={{ padding: "0 15px" }}>
