@@ -16,15 +16,35 @@ function Contact() {
     });
   };
 
-  const Submit = (e) => {
+  const Submit = async (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-    alert("Your message has been sent. We will get back to you shortly!");
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+
+    try {
+      const response = await fetch("https://test-omega-three-15.vercel.app/api/events", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const result = await response.json();
+      console.log("Form Submitted Successfully:", result);
+      alert("Your message has been sent. We will get back to you shortly!");
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("There was a problem with the form submission:", error);
+      alert("There was an error sending your message. Please try again later.");
+    }
   };
 
   return (
