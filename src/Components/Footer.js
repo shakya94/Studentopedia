@@ -99,7 +99,7 @@ function Footer() {
 
         <hr style={{ borderColor: "rgba(255, 255, 255, 0.2)" }} />
         <p className="text-center mb-0" style={{ fontSize: "0.85rem" }}>
-          &copy; {new Date().getFullYear()} HOIK. All Rights Reserved. <br />
+          &copy; {new Date().getFullYear()} Studentopedia. All Rights Reserved. <br />
           Designed with ♥ by Studentopedia Team.
         </p>
       </Container>

@@ -2,12 +2,8 @@ import React from "react";
 import { Carousel as BootstrapCarousel } from "react-bootstrap";
 import MultiCarousel from "react-multi-carousel";
 import { Link } from "react-router-dom";
-import slide1 from "./images/slide1.jpg";
-import slide2 from "./images/slide2.jpg";
-import slide3 from "./images/slide3.jpg";
-import slide4 from "./images/slide4.jpg";
-import slide5 from "./images/slide5.jpg";
 import "react-multi-carousel/lib/styles.css";
+import axios from 'axios';
 
 function Home() {
   const responsive = {
@@ -28,69 +24,58 @@ function Home() {
     },
   };
 
-  const cards = [
-    {
-      title: "Learn Together",
-      text: "Join our community of learners to achieve your goals faster.",
-      link: "/learn",
-      img: slide1,
-    },
-    {
-      title: "Interactive Courses",
-      text: "Explore a variety of engaging and interactive courses tailored for you.",
-      link: "/courses",
-      img: slide2,
-    },
-    {
-      title: "Expert Guidance",
-      text: "Get assistance from top educators to guide your learning journey.",
-      link: "/guidance",
-      img: slide3,
-    },
-  ];
+const EventCarousel = () => {
+    const [events, setEvents] = useState([]);
+  
+    useEffect(() => {
+      // Fetch events data from the API
+      axios.get('/events')
+        .then(response => {
+          setEvents(response.data); // Assuming the response data is an array of events
+        })
+        .catch(error => {
+          console.error("Error fetching events:", error);
+        });
+    }, []);
+
+
+  const ImageCarousel = () => {
+    const [images, setImages] = useState([]);
+  
+  useEffect(() => {
+      // Fetch images from the API
+      axios.get('/images')
+        .then(response => {
+          setImages(response.data); // Assuming the response data is an array of image URLs
+        })
+        .catch(error => {
+          console.error("Error fetching images:", error);
+        });
+    }, []);
+
 
   return (
     <div className="container text-center">
       <h1>Welcome to Studentopedia</h1>
+   <BootstrapCarousel className="my-4">
+      {images.map((image, index) => (
+        <BootstrapCarousel.Item key={index}>
+          <img
+            className="d-block w-100"
+            src={image.imageurl} // Assuming each image object has an `imageurl` property
+            alt={`Slide ${index + 1}`}
+            style={{
+              height: "750px",
+              objectFit: "cover",
+            }}
+          />
+        </BootstrapCarousel.Item>
+      ))}
+    </BootstrapCarousel>
 
-      <BootstrapCarousel className="my-4">
-        {[slide1, slide2, slide3, slide4, slide5].map((image, index) => (
-          <BootstrapCarousel.Item key={index}>
-            <img
-              className="d-block w-100"
-              src={image}
-              alt={`Slide ${index + 1}`}
-              style={{
-                height: "750px",
-                objectFit: "cover",
-              }}
-            />
-            <BootstrapCarousel.Caption>
-              <h3>
-                {
-                  ["Discover", "Learn", "Engage", "Collaborate", "Achieve"][
-                    index
-                  ]
-                }
-              </h3>
-              <p>
-                {
-                  [
-                    "Explore new concepts and ideas.",
-                    "Deep dive into courses and lectures.",
-                    "Participate in discussions and group activities.",
-                    "Work on projects with peers worldwide.",
-                    "Reach new milestones in your learning journey.",
-                  ][index]
-                }
-              </p>
-            </BootstrapCarousel.Caption>
-          </BootstrapCarousel.Item>
-        ))}
-      </BootstrapCarousel>
 
       <MultiCarousel responsive={responsive} className="mt-5">
-        {cards.map((card, index) => (
+        {events.map((event, index) => (
           <div key={index} style={{ padding: "0 15px" }}>
             <div
               className="shadow-sm h-100"
@@ -107,16 +92,16 @@ function Home() {
                   padding: "15px",
                 }}
               >
-                <h5 style={{ margin: 0 }}>{card.title}</h5>
+                <h5 style={{ margin: 0 }}>{event.title}</h5>
               </div>
               <img
-                src={card.img}
-                alt={card.title}
+                src={event.imageurl}
+                alt={event.name}
                 style={{ width: "100%", height: "200px", objectFit: "cover" }}
               />
               <div style={{ padding: "20px" }}>
-                <p>{card.text}</p>
-                <Link to={card.link}>
+                <p>{event.desc}</p>
+                <Link to={event.url}>
                   <button className="btn btn-primary">Know More</button>
                 </Link>
               </div>
