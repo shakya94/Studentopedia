@@ -20,7 +20,7 @@ function Home() {
       });
 
     // Fetch images from the API
-    axios.get('/images')
+    axios.get('https://test-omega-three-15.vercel.app/api/images')
       .then(response => {
         setImages(response.data); // Assuming the response data is an array of image URLs
       })
