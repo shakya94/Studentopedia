@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import slide1 from "./images/slide1.jpg";
+
 
 function About() {
   return (
@@ -14,15 +14,16 @@ function About() {
       <Container>
         <Row className="align-items-center">
           <Col md={6}>
-            <img
-              src={slide1}
-              alt="About Us"
-              style={{
-                width: "100%",
-                borderRadius: "10px",
-                boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-              }}
-            />
+          <img
+  src="https://images.app.goo.gl/9XMkLcADBAcsyrBEA"
+  alt="About Us"
+  style={{
+    width: "100%",
+    borderRadius: "10px",
+    boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+  }}
+/>
+
           </Col>
           <Col md={6}>
             <h2

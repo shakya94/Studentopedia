@@ -20,7 +20,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://test-omega-three-15.vercel.app/api/events", {
+      const response = await fetch("https://test-omega-three-15.vercel.app/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
