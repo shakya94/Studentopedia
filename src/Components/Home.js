@@ -11,9 +11,10 @@ function Home() {
 
   useEffect(() => {
     // Fetch events data from the API
-    axios.get('/events')
+    axios.get('https://test-omega-three-15.vercel.app/api/events')
       .then(response => {
-        setEvents(response.data); // Assuming the response data is an array of events
+        setEvents(response.data.data);
+        console.log("Events",response.data.data) // Assuming the response data is an array of events
       })
       .catch(error => {
         console.error("Error fetching events:", error);
@@ -68,7 +69,7 @@ function Home() {
       </BootstrapCarousel>
 
       <MultiCarousel responsive={responsive} className="mt-5">
-        {events.map((event, index) => (
+        {events?.map((event, index) => (
           <div key={index} style={{ padding: "0 15px" }}>
             <div
               className="shadow-sm h-100"
